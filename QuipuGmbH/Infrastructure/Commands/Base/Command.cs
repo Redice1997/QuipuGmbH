@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace QuipuGmbH.Infrastructure.Base
+namespace QuipuGmbH.Infrastructure.Commands.Base
 {
     public abstract class Command : ICommand
     {

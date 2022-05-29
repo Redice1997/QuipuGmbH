@@ -7,15 +7,19 @@
         
         xmlns:vm="clr-namespace:QuipuGmbH.ViewModels"
         xmlns:l="clr-namespace:QuipuGmbH"
+        xmlns:cmd="clr-namespace:QuipuGmbH.Infrastructure.Commands"
         Height="450" Width="800"
         Title="{Binding Title}" >
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CloseApplicationCommand"/>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход"/>
+                <MenuItem Header="Выход" Command="{StaticResource CloseApplicationCommand}"/>
             </MenuItem>
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"/>
@@ -23,7 +27,7 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
-            <StatusBarItem>
+            <StatusBarItem MinWidth="150" MaxWidth="350">
                 <TextBlock Text="{Binding Status}"/>
             </StatusBarItem>
             <StatusBarItem>
