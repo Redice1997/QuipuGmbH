@@ -9,15 +9,25 @@ namespace QuipuGmbH.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
+        #region Заголовок окна
+        private string title = "Тестовое задание";
+
+        /// <summary>Заголовок окна</summary>
+        public string Title
+        {
+            get => title;
+            set => Set(ref title, value);
+        }
+        #endregion
+
         #region Status : string - Статус программы
-        /// <summary>Статус программы</summary>
-        private string status = "Готов!";
+        private string status = "Готово!";
 
         /// <summary>Статус программы</summary>
         public string Status
         {
-            get { return status; }
-            set { Set(ref status, value); }
+            get => status;
+            set => Set(ref status, value);
         }
         #endregion
     }
