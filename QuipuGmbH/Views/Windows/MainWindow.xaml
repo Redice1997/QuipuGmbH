@@ -20,7 +20,10 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
                 <MenuItem Header="Выход" Command="{StaticResource CloseApplicationCommand}"/>
-            </MenuItem>
+                <MenuItem Header="Выбрать файл"/>
+            </MenuItem>           
+            <MenuItem Header="Запуск"/>
+            <MenuItem Header="Остановить"/>
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"/>
                 <MenuItem Header="Как пользоваться"/>
@@ -35,15 +38,17 @@
             </StatusBarItem>
         </StatusBar>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="37*"/>
-                <ColumnDefinition Width="43*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="151*"/>
-                <RowDefinition Height="243*"/>
-            </Grid.RowDefinitions>
-
+            <GroupBox Header="URL">
+                <DataGrid ItemsSource="{Binding UrlCounters}"
+                          AutoGenerateColumns="False" IsReadOnly="True"
+                          HorizontalGridLinesBrush="DarkGray"
+                          VerticalGridLinesBrush="DarkGray">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Адрес страницы" Binding="{Binding Url}" Width="*"/>
+                        <DataGridTextColumn Header="Количество тэгов &lt;a&gt;" Binding="{Binding TagCount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
         </Grid>
     </DockPanel>
 </Window>
