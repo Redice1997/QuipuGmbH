@@ -11,25 +11,25 @@ namespace QuipuGmbH.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
-        #region Заголовок окна
-        private string title = "Тестовое задание";
+        #region Title : string - Заголовок окна
+        private string _Title = "Тестовое задание";
 
         /// <summary>Заголовок окна</summary>
         public string Title
         {
-            get => title;
-            set => Set(ref title, value);
+            get => _Title;
+            set => Set(ref _Title, value);
         }
         #endregion
 
         #region Status : string - Статус программы
-        private string status = "Готово!";
+        private string _Status = "Готово!";
 
         /// <summary>Статус программы</summary>
         public string Status
         {
-            get => status;
-            set => Set(ref status, value);
+            get => _Status;
+            set => Set(ref _Status, value);
         }
         #endregion
 
@@ -42,6 +42,7 @@ namespace QuipuGmbH.ViewModels
         public ObservableCollection<UrlCounter> UrlCounters { get => _UrlCounters; set => Set(ref _UrlCounters, value); }
 
         #endregion
+       
 
         public MainWindowViewModel()
         {

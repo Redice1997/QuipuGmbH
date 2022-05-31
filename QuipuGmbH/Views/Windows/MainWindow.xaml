@@ -38,14 +38,15 @@
             </StatusBarItem>
         </StatusBar>
         <Grid>
-            <GroupBox Header="URL">
+            <GroupBox Header="Список URL">
                 <DataGrid ItemsSource="{Binding UrlCounters}"
                           AutoGenerateColumns="False" IsReadOnly="True"
                           HorizontalGridLinesBrush="DarkGray"
-                          VerticalGridLinesBrush="DarkGray">
+                          VerticalGridLinesBrush="DarkGray"
+                          SelectedIndex="0">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Адрес страницы" Binding="{Binding Url}" Width="*"/>
-                        <DataGridTextColumn Header="Количество тэгов &lt;a&gt;" Binding="{Binding TagCount}"/>
+                        <DataGridHyperlinkColumn Header="Адрес страницы" Binding="{Binding Url}" Width="*"/>
+                        <DataGridTextColumn Header="Количество тэгов &lt;a&gt;" Binding="{Binding TagCount}" SortDirection="Descending"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>
